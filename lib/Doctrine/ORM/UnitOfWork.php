@@ -2724,7 +2724,7 @@ class UnitOfWork implements PropertyChangedListener
                     foreach ($assoc['targetToSourceKeyColumns'] as $targetColumn => $srcColumn) {
                         $joinColumnValue = $data[$srcColumn] ?? null;
 
-                        if ($joinColumnValue !== null) {
+                        if ($joinColumnValue !== null && $joinColumnValue !== 0) {
                             if ($targetClass->containsForeignIdentifier) {
                                 $associatedId[$targetClass->getFieldForColumn($targetColumn)] = $joinColumnValue;
                             } else {
